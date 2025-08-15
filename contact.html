@@ -1,0 +1,100 @@
+<!--  -->
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display,+Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — La Marisq</title>
+  <meta name="description" content="Contact La Marisq for reservations, events, and inquiries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Playfair Display"', 'serif'],
+            sans: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body style="font-family: 'Playfair Display, Poppins', sans-serif;" style="font-family: 'Playfair Display', sans-serif;" class="antialiased bg-gray-50 font-sans text-gray-800">
+  <header class="w-full bg-white shadow-sm">
+    <nav class="w-full max-w-none mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-emerald-400 flex items-center justify-center text-white font-bold">LM</div>
+        <div>
+          <h1 class="text-lg font-display">La Marisq</h1>
+        </div>
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="text-sm hover:text-teal-600">Home</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="text-sm hover:text-teal-600">About</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="text-sm font-semibold">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="w-full max-w-none px-6 py-10">
+    <section class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-display">Get in touch</h2>
+        <p class="text-gray-600 mt-2">Questions about our menu, private events, or press? Send us a message and we'll reply shortly.</p>
+        <form id="contactForm" class="mt-6 grid grid-cols-1 gap-4">
+          <input name="name" placeholder="Your name" required class="p-3 border rounded" />
+          <input name="email" type="email" placeholder="Email" required class="p-3 border rounded" />
+          <input name="subject" placeholder="Subject" class="p-3 border rounded" />
+          <textarea name="message" rows="5" placeholder="Message" class="p-3 border rounded"></textarea>
+          <button type="submit" class="px-4 py-3 bg-teal-600 text-white rounded">Send Message</button>
+          <p id="contactMessage" class="text-sm text-green-600 hidden">Thanks — your message was sent (demo).</p>
+        </form>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-display">Visit Us</h3>
+          <p class="text-sm text-gray-600 mt-2">123 Ocean Ave, Harbor City</p>
+          <p class="text-sm text-gray-600 mt-1">Phone: (555) 123-4567</p>
+          <p class="text-sm text-gray-600 mt-1">Open: Tue–Sun 11am–10pm</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-display">Location</h3>
+          <img src="https://pixabay.com/get/gd898df7e218f3fe624b66a25f03120448b1d3699141fab721bdeb4a6e9455437e3915a5f8ee6ed543300fc57ae0bb5fb18a55334734e7d6cf670d997fb4abb6b_640.jpg" alt="Map placeholder" class="w-full h-40 object-cover rounded-md mt-3" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full bg-white border-t mt-10 p-6 text-sm text-gray-500">
+    <div class="flex items-center justify-between">
+      <div>© <span id="yearContact"></span> La Marisq</div>
+      <nav class="flex gap-4">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="hover:text-teal-600">Home</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="hover:text-teal-600">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearContact').textContent = new Date().getFullYear();
+
+    // Simple client-side contact form demo
+    const contactForm = document.getElementById('contactForm');
+    const contactMessage = document.getElementById('contactMessage');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      contactMessage.classList.remove('hidden');
+      contactForm.reset();
+      setTimeout(() => contactMessage.classList.add('hidden'), 4000);
+    });
+  </script>
+</body>
+</html>
